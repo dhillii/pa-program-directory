@@ -12,18 +12,18 @@ const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
   onClose,
 }) => {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm overflow-y-auto">
-      <div className="bg-white rounded-lg shadow-xl w-full max-w-2xl relative animate-in fade-in zoom-in duration-200 my-8">
+    <div className="fixed inset-0 z-50 flex items-start md:items-center justify-center p-4 bg-black/60 backdrop-blur-sm overflow-y-auto pt-4 md:pt-0">
+      <div className="bg-white rounded-lg shadow-xl w-full max-w-2xl relative animate-in fade-in zoom-in duration-200 my-0 md:my-8 mt-4 md:mt-0">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 text-gray-400 hover:text-gray-600 transition-colors z-10"
+          className="absolute right-4 top-4 text-gray-400 hover:text-gray-600 transition-colors z-10 bg-white rounded-full p-1"
         >
           <X size={24} />
         </button>
 
-        {/* Content Container */}
-        <div className="p-8">
+        {/* Content Container with padding for close button */}
+        <div className="p-6 md:p-8 pt-12 md:pt-8">
           {/* Header */}
           <div className="mb-8 border-b border-gray-100 pb-6">
             <h2 className="text-3xl font-bold font-serif text-[#00283c] leading-tight mb-2">
