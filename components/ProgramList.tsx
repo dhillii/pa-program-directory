@@ -146,14 +146,6 @@ const ProgramList: React.FC<ProgramListProps> = ({ programs }) => {
               {renderRow("PANCE Rate", comparisonList, (p) => p.pancePassRate)}
               {renderRow("Accreditation", comparisonList, (p) => p.accreditationStatus)}
               
-              {/* Features (Booleans) */}
-              {renderBoolRow("Part-time Option", comparisonList, "partTimeOption")}
-              {renderBoolRow("Undergrad to Masters", comparisonList, "undergradToMasters")}
-              {renderBoolRow("Masters to Doctorate", comparisonList, "mastersToDoctorate")}
-              {renderBoolRow("Accepts Int'l", comparisonList, "acceptsInternational")}
-              {renderBoolRow("Veteran Support", comparisonList, "veteranSupport")}
-              {renderBoolRow("On Campus Housing", comparisonList, "onCampusHousing")}
-              {renderBoolRow("Distance Learning", comparisonList, "distanceLearning")}
             </tbody>
           </table>
         </div>
