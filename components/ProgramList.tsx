@@ -164,19 +164,19 @@ const ProgramList: React.FC<ProgramListProps> = ({ programs }) => {
       
       <div>
         {/* Controls Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center mb-4 gap-4 bg-gray-50 p-3 rounded border border-gray-200 sticky top-0 z-10 shadow-sm">
-          <div className="text-sm text-gray-600 order-2 md:order-1">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-4 gap-2 md:gap-4 bg-gray-50 p-2 md:p-3 rounded border border-gray-200 sticky top-0 z-10 shadow-sm overflow-hidden">
+          <div className="text-xs md:text-sm text-gray-600 order-2 md:order-1 whitespace-nowrap">
             <span className="font-bold text-[#4a1d48]">{selectedIds.length}</span>{" "}
             program{selectedIds.length !== 1 && "s"} selected (max 3)
           </div>
 
-          <div className="flex gap-3 order-1 md:order-2 w-full md:w-auto justify-end">
+          <div className="flex gap-2 order-1 md:order-2 w-full md:w-auto justify-end flex-wrap">
             <button
                 onClick={downloadCSV}
                 className="flex items-center gap-1 text-gray-600 hover:text-[#4a1d48] text-xs font-bold uppercase tracking-wider px-2 py-1 md:px-0 md:py-0 whitespace-nowrap"
                 title="Download CSV"
             >
-                <Download className="w-4 h-4 flex-shrink-0" />
+                <Download className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
                 <span className="hidden md:inline">Download</span>
             </button>
 
