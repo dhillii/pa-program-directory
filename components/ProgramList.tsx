@@ -173,11 +173,11 @@ const ProgramList: React.FC<ProgramListProps> = ({ programs }) => {
           <div className="flex gap-3 order-1 md:order-2 w-full md:w-auto justify-end">
             <button
                 onClick={downloadCSV}
-                className="flex items-center text-gray-600 hover:text-[#4a1d48] text-xs font-bold uppercase tracking-wider mr-4"
+                className="flex items-center gap-1 text-gray-600 hover:text-[#4a1d48] text-xs font-bold uppercase tracking-wider px-2 py-1 md:px-0 md:py-0 whitespace-nowrap"
                 title="Download CSV"
             >
-                <Download className="w-4 h-4 mr-1" />
-                Download
+                <Download className="w-4 h-4 flex-shrink-0" />
+                <span className="hidden md:inline">Download</span>
             </button>
 
             {selectedIds.length > 0 && (
