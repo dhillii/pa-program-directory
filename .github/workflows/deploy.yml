@@ -16,13 +16,13 @@ jobs:
           node-version: '18'
       
       - name: Install dependencies
-        run: cd pa-program-directory && npm install
+        run: npm install
       
       - name: Build
-        run: cd pa-program-directory && npm run build
+        run: npm run build
       
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./pa-program-directory/dist
+          publish_dir: ./dist
