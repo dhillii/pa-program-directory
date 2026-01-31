@@ -242,12 +242,29 @@ const ProgramList: React.FC<ProgramListProps> = ({ programs }) => {
                       }
                     `}
                   >
-                    {/* Program Info (Clickable) */}
-                    <div className="w-full flex-1 mb-2 md:mb-0 pl-1 cursor-pointer group" onClick={() => setSelectedProgram(program)}>
-                      <h3 className="text-[#4a1d48] font-bold text-sm md:text-base font-serif group-hover:underline group-hover:text-[#6a2b66]">
-                        {program.name}
-                      </h3>
-                      {/* Mobile Only Location shows here too usually, but we have column for state */}
+                    {/* Top Section: Program Info and Checkbox (Side by side on mobile) */}
+                    <div className="w-full md:flex-1 flex justify-between items-start md:items-center md:gap-0 mb-2 md:mb-0">
+                      {/* Program Info (Clickable) */}
+                      <div className="flex-1 pl-1 cursor-pointer group" onClick={() => setSelectedProgram(program)}>
+                        <h3 className="text-[#4a1d48] font-bold text-sm md:text-base font-serif group-hover:underline group-hover:text-[#6a2b66]">
+                          {program.name}
+                        </h3>
+                      </div>
+
+                      {/* Checkbox Area */}
+                      <div className="flex items-center md:hidden">
+                        <label className="flex items-center cursor-pointer p-1">
+                          <span className="mr-2 text-xs font-bold text-gray-500 uppercase">
+                            Compare
+                          </span>
+                          <input
+                            type="checkbox"
+                            checked={isSelected}
+                            onChange={() => toggleSelection(program.id)}
+                            className="w-5 h-5 accent-[#c5a065] cursor-pointer"
+                          />
+                        </label>
+                      </div>
                     </div>
 
                     {/* State */}
@@ -255,12 +272,9 @@ const ProgramList: React.FC<ProgramListProps> = ({ programs }) => {
                       {program.state}
                     </div>
 
-                    {/* Checkbox Area - Moved to END */}
-                    <div className="w-full md:w-16 flex items-center md:justify-center">
+                    {/* Checkbox Area - Desktop */}
+                    <div className="hidden md:flex md:w-16 items-center md:justify-center">
                       <label className="flex items-center cursor-pointer p-1">
-                        <span className="md:hidden mr-2 text-xs font-bold text-gray-500 uppercase">
-                          Compare
-                        </span>
                         <input
                           type="checkbox"
                           checked={isSelected}
