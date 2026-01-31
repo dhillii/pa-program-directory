@@ -75,17 +75,19 @@ const ProgramList: React.FC<ProgramListProps> = ({ programs }) => {
     ]);
 
     // Combine headers and rows
-    const csvContent =
-      "data:text/csv;charset=utf-8," +
-      [headers.join(","), ...rows.map((row) => row.join(","))].join("\n");
+    const csvContent = [headers.join(","), ...rows.map((row) => row.join(","))].join("\n");
 
-    const encodedUri = encodeURI(csvContent);
+    // Create a Blob instead of data URL
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
     const link = document.createElement("a");
-    link.setAttribute("href", encodedUri);
+    const url = URL.createObjectURL(blob);
+    link.setAttribute("href", url);
     link.setAttribute("download", "pa_programs.csv");
+    link.style.visibility = "hidden";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    URL.revokeObjectURL(url);
   };
 
   if (isComparing) {
