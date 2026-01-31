@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Program } from "../types";
 import { X } from "lucide-react";
 
@@ -11,6 +11,16 @@ const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
   program,
   onClose,
 }) => {
+  // Prevent body scroll when drawer is open
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, []);
+
   return (
     <>
       {/* Overlay */}
