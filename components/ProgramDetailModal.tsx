@@ -30,7 +30,7 @@ const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
       />
       
       {/* Drawer - Slides in from bottom on mobile, from right on desktop */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:w-96 md:right-0 md:h-screen h-[95dvh] bg-white shadow-2xl overflow-y-auto animate-in slide-in-from-bottom md:slide-in-from-right duration-500 ease-out">
+      <div className="fixed bottom-0 left-0 right-0 md:bottom-auto md:top-0 md:left-auto md:right-0 z-50 md:w-96 md:h-screen h-[95dvh] bg-white shadow-2xl overflow-y-auto animate-in slide-in-from-bottom md:slide-in-from-right duration-500 ease-out">
         {/* Close Button - Sticky Header */}
         <div className="sticky top-0 bg-white border-b border-gray-200 p-4 flex items-center justify-between z-10">
           <h2 className="text-lg md:text-xl font-bold font-serif text-[#2c1a2b] truncate">
