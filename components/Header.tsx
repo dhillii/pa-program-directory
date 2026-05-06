@@ -3,7 +3,7 @@ import React from "react";
 const Header: React.FC = () => {
   const currentYear = new Date().getFullYear();
   const previousYear = currentYear - 1;
-  const cycleText = `${previousYear}-${currentYear} Application Cycle`;
+  const cycleText = `PA Program Search Directory`;
 
   return (
     <div className="text-center py-8 px-4 max-w-4xl mx-auto">

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FilterState, Program } from "../types";
 import { getUniqueValues } from "../services/programService";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, Search } from "lucide-react";
 
 interface FilterSectionProps {
   programs: Program[];
@@ -53,6 +53,17 @@ const FilterSection: React.FC<FilterSectionProps> = ({
       {/* Filter Body */}
       {isOpen && (
         <div className="p-4 md:p-6 border-t border-gray-200">
+          <div className="relative mb-4">
+            <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+            <input
+              type="text"
+              value={filters.searchQuery}
+              onChange={(e) => handleChange("searchQuery", e.target.value)}
+              placeholder="Search school name"
+              className="w-full pl-9 pr-3 p-2.5 border border-gray-300 rounded bg-white text-gray-700 text-sm focus:outline-none focus:border-teal-600 focus:ring-1 focus:ring-teal-600"
+            />
+          </div>
+
           {/* Dropdowns Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
             <select

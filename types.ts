@@ -37,6 +37,7 @@ export interface Program {
 }
 
 export interface FilterState {
+  searchQuery: string;
   state: string;
   degreeOffered: string;
   healthcareExperience: string;
@@ -48,6 +49,7 @@ export interface FilterState {
 
 
 export const INITIAL_FILTERS: FilterState = {
+  searchQuery: "",
   state: "",
   degreeOffered: "",
   healthcareExperience: "",
