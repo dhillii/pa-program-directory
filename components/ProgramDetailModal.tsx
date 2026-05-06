@@ -49,10 +49,11 @@ const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
           {/* Header Info */}
           <div className="mb-6 pb-4 border-b border-gray-100">
             <div className="text-[#346663] font-medium text-base mb-2">
-              {program.city}, {program.state}
+              State: {program.state}
             </div>
-            <div className="text-xs text-gray-500 font-bold uppercase tracking-wide">
-              {program.accreditationStatus}
+            <div className="flex justify-between items-center py-2 border-b border-gray-100">
+              <span className="font-bold text-[#4a1d48] text-sm">Accreditation</span>
+              <span className="text-gray-900 font-medium text-sm">{program.accreditationStatus}</span>
             </div>
           </div>
 
