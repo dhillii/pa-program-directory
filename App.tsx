@@ -26,6 +26,13 @@ const App: React.FC = () => {
   // Filtering Logic
   useEffect(() => {
     const filtered = allPrograms.filter((program) => {
+      const searchTerm = filters.searchQuery.trim().toLowerCase();
+
+      // Match school/program name against the search input
+      if (searchTerm && !program.name.toLowerCase().includes(searchTerm)) {
+        return false;
+      }
+
       // 1. Dropdown Matches (String equality if filter is present)
       if (filters.state && program.state !== filters.state) return false;
       if (
